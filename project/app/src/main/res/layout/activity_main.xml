@@ -5,7 +5,112 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
 
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:clickable="true"
+        android:onClick="onClick_Button2"
+        android:text="shutter" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView1"
+        android:layout_alignParentTop="true" >
+
+        <ViewFlipper
+            android:id="@+id/viewFlipper1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" >
+
+            <Space
+                android:id="@+id/space1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout1"
+                android:layout_width="154dp"
+                android:layout_height="match_parent"
+                android:background="#ff7f50"
+                android:visibility="visible" >
+
+                <ScrollView
+                    android:id="@+id/scrollView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" >
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical" >
+
+                        <RadioGroup
+                            android:id="@+id/radiogroup"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="0dp" >
+                        </RadioGroup>
+
+                        <Button
+                            android:id="@+id/button1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="40dp"
+                            android:onClick="onClick_Button1"
+                            android:text="登録" />
+                    </LinearLayout>
+                </ScrollView>
+            </RelativeLayout>
+
+        </ViewFlipper>
+
+        <SlidingDrawer
+            android:id="@+id/slidingDrawer1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:content="@+id/content"
+            android:handle="@+id/handle" >
+
+            <Button
+                android:id="@+id/handle"
+                android:layout_width="89dp"
+                android:layout_height="39dp"
+                android:text="Handle" />
+
+            <LinearLayout
+                android:id="@+id/content"
+                android:layout_width="22dp"
+                android:layout_height="62dp"
+                android:background="#9966cc"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                </LinearLayout>
+            </LinearLayout>
+        </SlidingDrawer>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/linearLayout1"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/linearLayout1"
+        android:layout_centerInParent="false"
+        android:gravity="center"
+        android:text="miyoro.btc@gmail.com"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>
